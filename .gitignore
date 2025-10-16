@@ -1,0 +1,45 @@
+# Ignore Visual Studio files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+
+# Visual Studio cache
+*.dbmdl
+*.bak
+*.vscode/
+*.localhistory/
+
+# Ignore publish outputs
+*.Publish.xml
+publish/
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.log
+
+# Ignore package folders
+packages/
+*.nupkg
+
+# User-specific files
+*.rsuser
+*.userprefs
+
+# Others
+node_modules/
+.env
