@@ -11,6 +11,7 @@ namespace VRASearchEngine.Controllers
         // GET: Searching
         public ActionResult Index()
         {
+            ViewBag.Title = "Search Employee";
             return View();
         }
     }

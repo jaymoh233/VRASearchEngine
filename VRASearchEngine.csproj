@@ -127,6 +127,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PeopleController.cs" />
     <Compile Include="Controllers\SearchingController.cs" />
@@ -138,7 +139,12 @@
     <Compile Include="Migrations\202510180633259_InitialCreate.Designer.cs">
       <DependentUpon>202510180633259_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202510181335560_Converted_TPH_TPT_Added_Admin_Model.cs" />
+    <Compile Include="Migrations\202510181335560_Converted_TPH_TPT_Added_Admin_Model.Designer.cs">
+      <DependentUpon>202510181335560_Converted_TPH_TPT_Added_Admin_Model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\DepartmentModel.cs" />
     <Compile Include="Models\DriverModel.cs" />
     <Compile Include="Models\InternModel.cs" />
@@ -166,6 +172,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\styles.css" />
+    <Content Include="Content\vra-logo.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -186,6 +194,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\scripts.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -201,12 +210,13 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\People\Index.cshtml" />
+    <Content Include="Views\Searching\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Dto\" />
     <Folder Include="ViewModels\" />
-    <Folder Include="Views\Searching\" />
+    <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -238,6 +248,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202510180633259_InitialCreate.resx">
       <DependentUpon>202510180633259_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510181335560_Converted_TPH_TPT_Added_Admin_Model.resx">
+      <DependentUpon>202510181335560_Converted_TPH_TPT_Added_Admin_Model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

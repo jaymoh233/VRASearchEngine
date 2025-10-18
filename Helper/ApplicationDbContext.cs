@@ -16,6 +16,8 @@ namespace VRASearchEngine.Helper
         {
         }
 
+        public DbSet<AdminModel> Admins { get; set; }
+
         public DbSet<PersonModel> People { get; set; }
 
         public DbSet<StaffModel> Staff { get; set; }
@@ -23,6 +25,21 @@ namespace VRASearchEngine.Helper
         public DbSet<InternModel> Interns { get; set; }
         public DbSet<ServicePersonnelModel> ServicePersonnel { get; set; }
         public DbSet<DepartmentModel> Departments { get; set; }
+
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // TPT mapping
+            modelBuilder.Entity<AdminModel>().ToTable("Admins");
+
+            modelBuilder.Entity<PersonModel>().ToTable("People");
+            modelBuilder.Entity<StaffModel>().ToTable("Staff");
+            modelBuilder.Entity<DriverModel>().ToTable("Drivers");
+            modelBuilder.Entity<InternModel>().ToTable("Interns");
+            modelBuilder.Entity<ServicePersonnelModel>().ToTable("ServicePersonnel");
+        }
 
 
     }
