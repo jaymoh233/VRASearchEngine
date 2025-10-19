@@ -352,3 +352,79 @@ body.dark-theme .theme-toggle-indicator {
         padding: 30px 20px;
     }
 }
+
+
+/* container for submenu (hidden by default, will animate) */
+.submenu {
+    list-style: none;
+    padding: 0;
+    margin: 6px 0 0 0;
+    overflow: hidden;
+    max-height: 0; /* collapsed */
+    transition: max-height 0.28s ease, opacity 0.28s ease;
+    opacity: 0;
+}
+
+/* when open, allow space and fade in */
+.menu-item.open .submenu {
+    max-height: 400px; /* large enough to fit items */
+    opacity: 1;
+}
+
+/* each submenu item - make it look like .menu-link */
+.submenu li {
+    margin: 0;
+}
+
+.submenu-link {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* space like top links */
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: var(--color-text-primary);
+    white-space: nowrap;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.12s ease;
+    font-size: 0.95rem;
+    margin-left: 6px; /* slight indent under parent */
+}
+
+    /* hover + active states — reuse exact main menu effect */
+    .submenu-link:is(:hover, .active) {
+        color: #fff;
+        background: var(--color-hover-primary);
+        transform: translateY(-1px);
+    }
+
+    /* ensure hover placeholder color (dark-theme compatible) */
+    .submenu-link:hover {
+        color: #fff; /* primary hover color */
+    }
+
+/* hide submenu text when sidebar is collapsed (keeps UX consistent) */
+.sidebar.collapsed .submenu,
+.sidebar.collapsed .submenu-link {
+    display: none !important;
+}
+
+/* rotate arrow of parent when open (use your arrow class) */
+.menu-item.has-dropdown .dropdown-arrow {
+    margin-left: auto;
+    transition: transform 0.28s ease;
+}
+
+.menu-item.open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* small touch: when parent menu-link is hovered, show subtle bg on parent (like others) */
+.menu-item.has-dropdown > .menu-link:is(:hover, .active) {
+    background: var(--color-hover-primary);
+    color: #fff;
+}
+
+/* ensure submenu links color in dark theme (inherits var) */
+body.dark-theme .submenu-link {
+    color: var(--color-text-primary);
+}

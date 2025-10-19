@@ -37,3 +37,34 @@ searchForm.addEventListener("click", () => {
 });
 // Expand sidebar by default on large screens
 if (window.innerWidth > 768) sidebar.classList.remove("collapsed");
+
+
+// dropdown toggle for parent links
+document.querySelectorAll(".menu-item.has-dropdown > .menu-link").forEach(link => {
+    link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const parent = this.closest(".menu-item");
+
+        // optionally close other open dropdowns (uncomment if you want single-open behavior)
+        // document.querySelectorAll(".menu-item.has-dropdown.open").forEach(item => {
+        //   if (item !== parent) item.classList.remove("open");
+        // });
+
+        parent.classList.toggle("open");
+    });
+});
+
+// manage submenu link active state (keeps UI consistent)
+document.querySelectorAll(".submenu-link").forEach(s => {
+    s.addEventListener("click", function () {
+        // remove .active from all submenu links
+        document.querySelectorAll(".submenu-link").forEach(x => x.classList.remove("active"));
+        // remove .active from top-level links if needed
+        document.querySelectorAll(".menu-link").forEach(x => x.classList.remove("active"));
+
+        this.classList.add("active");
+
+        // optionally close sidebar on mobile or do navigation naturally
+        // window.location = this.href; // leave default if link is real
+    });
+});
