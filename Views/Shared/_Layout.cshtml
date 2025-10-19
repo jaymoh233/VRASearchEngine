@@ -9,6 +9,8 @@
     <title>@ViewBag.Title - VRA Search Engine</title>
 
     <!-- Sidebar styles -->
+    @*@Styles.Render("~/Content/css")*@
+
     <link href="~/Content/styles.css" rel="stylesheet" />
 
     <!-- Google icons -->
@@ -36,62 +38,80 @@
             </div>
 
             <div class="sidebar-content">
-                <form action="#" class="search-form">
-                    <span class="material-symbols-rounded">search</span>
-                    <input type="search" placeholder="Search..." required />
-                </form>
+               
 
                 <ul class="menu-list">
-                    <!-- Search -->
+                    <!-- Dashboard -->
                     <li class="menu-item">
                         <a href="@Url.Action("Index", "Searching")" class="menu-link active">
-                            <span class="material-symbols-rounded">search</span>
-                            <span class="menu-label">Search Employee</span>
+                            <span class="material-symbols-rounded">dashboard</span>
+                            <span class="menu-label">Dashboard</span>
                         </a>
                     </li>
 
-                    <!-- Departments Dropdown -->
+                    <!-- Search -->
+                    <li class="menu-item">
+                        <a href="@Url.Action("Index", "Searching")" class="menu-link">
+                            <span class="material-symbols-rounded">search</span>
+                            <span class="menu-label">Search</span>
+                        </a>
+                    </li>
+
+
+                    <!-- Employees Dropdown (Dashboard Section) -->
                     <li class="menu-item has-dropdown">
-                        <a href="#" class="menu-link dropdown-toggle">
-                            <span class="material-symbols-rounded">account_tree</span>
-                            <span class="menu-label">Departments</span>
+                        <a href="#" class="menu-link dropdown-toggle ">
+                            <span class="material-symbols-rounded">groups</span>
+                            <span class="menu-label">Employees</span>
                             <span class="material-symbols-rounded dropdown-arrow">expand_more</span>
                         </a>
                         <ul class="submenu">
-                            <li><a href="@Url.Action("Index", "Department")" class="submenu-link">View Departments</a></li>
-                            <li><a href="@Url.Action("Create", "Department")" class="submenu-link">Add Department</a></li>
+                            <li>
+                                <a href="@Url.Action("Index", "Searching")" class="submenu-link">
+                                    <span class="material-symbols-rounded">person</span>
+                                    <span class="menu-label">Staff</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Index", "Driver")" class="submenu-link">
+                                    <span class="material-symbols-rounded">local_taxi</span>
+                                    <span class="menu-label">Drivers</span>
+                                </a>
+                            </li>
                         </ul>
                     </li>
 
-                    <!-- Interns Dropdown -->
+
+                    <!-- NSS & Interns Dropdown -->
                     <li class="menu-item has-dropdown">
                         <a href="#" class="menu-link dropdown-toggle">
                             <span class="material-symbols-rounded">school</span>
-                            <span class="menu-label">Interns</span>
+                            <span class="menu-label">NSS & Interns</span>
                             <span class="material-symbols-rounded dropdown-arrow">expand_more</span>
                         </a>
                         <ul class="submenu">
-                            <li><a href="@Url.Action("Index", "Intern")" class="submenu-link">View Interns</a></li>
-                            <li><a href="@Url.Action("Create", "Intern")" class="submenu-link">Add Intern</a></li>
+                            <li>
+                                <a href="@Url.Action("Index", "ServicePersonnel")" class="submenu-link">
+                                    <span class="material-symbols-rounded">badge</span>
+                                    <span class="menu-label">National Service</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Index", "Intern")" class="submenu-link">
+                                    <span class="material-symbols-rounded">school</span>
+                                    <span class="menu-label">Interns</span>
+                                </a>
+                            </li>
                         </ul>
                     </li>
 
-                    <!-- NSS -->
+                    <!-- Departments -->
                     <li class="menu-item">
-                        <a href="@Url.Action("Index", "ServicePersonnel")" class="menu-link">
-                            <span class="material-symbols-rounded">badge</span>
-                            <span class="menu-label">NSS</span>
+                        <a href="@Url.Action("Index", "Admin")" class="menu-link">
+                            <span class="material-symbols-rounded">apartment</span>
+                            <span class="menu-label">Departments</span>
                         </a>
                     </li>
-
-                    <!-- Drivers -->
-                    <li class="menu-item">
-                        <a href="@Url.Action("Index", "Driver")" class="menu-link">
-                            <span class="material-symbols-rounded">local_taxi</span>
-                            <span class="menu-label">Drivers</span>
-                        </a>
-                    </li>
-
                     <!-- Settings -->
                     <li class="menu-item">
                         <a href="@Url.Action("Settings", "Admin")" class="menu-link">
@@ -122,8 +142,11 @@
     </div>
 
     <!-- Scripts -->
-    <script src="~/Scripts/scripts.js"></script>
-    
+    <!-- Scripts -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/scripts")
+
 
     @RenderSection("scripts", required: false)
 </body>

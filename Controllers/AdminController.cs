@@ -20,6 +20,13 @@ namespace VRASearchEngine.Controllers
             return View(admins);
         }
 
+        public ActionResult Departments()
+        {
+            var admins = _context.Admins.ToList();
+            return View(admins);
+        }
+
+
         [HttpGet]
         public ActionResult Create()
         {

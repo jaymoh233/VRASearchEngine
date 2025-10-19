@@ -25,6 +25,13 @@ namespace VRASearchEngine
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            // ✅ Add your custom scripts here
+            bundles.Add(new ScriptBundle("~/bundles/scripts").Include(
+                        "~/Scripts/scripts.js"));
+
+
+
         }
     }
 }
